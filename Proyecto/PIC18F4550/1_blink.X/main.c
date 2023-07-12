@@ -82,7 +82,7 @@
 
 void main(void) {
     
-    LATA = 0;           //Se asigna el puerto A como salidas
+    TRISAbits.RA4 = 0;  //Se asigna el puerto A como salidas
     LED  = 0;           //Se establece el pin en un estado bajo
     
     while (1) {
