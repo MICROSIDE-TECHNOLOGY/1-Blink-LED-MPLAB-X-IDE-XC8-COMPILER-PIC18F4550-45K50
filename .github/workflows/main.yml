@@ -1,0 +1,31 @@
+on: [push]
+
+jobs:
+  gist-sync:
+    name: gist-sync
+    runs-on: ubuntu-latest
+    steps:
+    #PIC18F4550
+      - name: Checkout
+        uses: actions/checkout@v2
+      - uses: vhperaltaj/gist-sync-action@v1.0.0
+        id: PIC18F4550
+        with:
+          auth: ${{ secrets.GIST_TOKEN }}
+          gist_url: https://gist.github.com/microside-mx/8b683529c98ebc9b2040d92ee4c0994e
+          gist_title: 1-Blink_led_MPLAB-4550.c
+          gist_description: Prácticas MPLABX
+          github_file: Proyecto/PIC18F4550/1_blink.X/main.c
+          file_encoding: ISO-8859-1
+    #PIC18F45K50
+      - name: Checkout
+        uses: actions/checkout@v2
+      - uses: vhperaltaj/gist-sync-action@v1.0.0
+        id: PIC18F45K50
+        with:
+          auth: ${{ secrets.GIST_TOKEN }}
+          gist_url: https://gist.github.com/microside-mx/b712b2aeb6757212672819a14b89dce4
+          gist_title: 1-Blink_Led_MPLAB.c
+          gist_description: Prácticas MPLABX
+          github_file: Proyecto/PIC18F45K50/1_blink.X/main.c
+          file_encoding: ISO-8859-1
